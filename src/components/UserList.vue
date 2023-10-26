@@ -15,7 +15,7 @@ import uuID from "vue-uuid"
         <h1>Client List</h1>
         <div class="table">
             <div class="table-head">
-                <label for="ID" class="label">ID</label>
+                <label for="ID" class="grid-item label">ID</label>
                 <label for="img" class="label">PIC</label>
                 <label for="name" class="label">NAME</label>
                 <label for="email" class="label">EMAIL</label>
@@ -23,19 +23,20 @@ import uuID from "vue-uuid"
                 <label for="password" class="label">PASSWORD</label>
                 <label for="password" class="label">ACTIONS</label>
             </div>
-        </div>
-        <div class="table-body">
-            <div class="table-row" v-for="user in UserList" :key="user.id">
-                <label for="ID" class="table-label">{{ uuID }}</label>
-                <img src="" alt="">
-                <label for="name" class="table-label">{{ user.name }}</label>
-                <label for="email" class="table-label">{{ user.email }}</label>
-                <label for="contact" class="table-label">{{ user.contact }}</label>
-                <label for="password" class="table-label">{{ user.password }}</label>
+            <div class="table-body">
+                <div class="table-row" v-for="user in UserList" :key="user.id">
+                    <label for="ID" class="table-label">{{ uuID }}</label>
+                    <img src="" alt="">
+                    <label for="name" class="table-label">{{ user.name }}</label>
+                    <label for="email" class="table-label">{{ user.email }}</label>
+                    <label for="contact" class="table-label">{{ user.contact }}</label>
+                    <label for="password" class="table-label">{{ user.password }}</label>
+
                     <div class="btn-position">
                         <button class="btn-edit">Edit</button>
                         <button class="btn-del">Delete</button>
                     </div>
+                </div>
             </div>
         </div>
     </div> 
@@ -44,36 +45,32 @@ import uuID from "vue-uuid"
 <style scoped>
 .back-color{
     background-color: #333;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
 }
     .table {
-        display:flex ;
+        display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 1em;
     }
     .table-head {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
         align-items: center;
-        gap: 5.5em;
         background-color: rgb(227, 89, 74);
         border-radius: 0.5em;
         width: 70em;
         height: 4em;
         margin-bottom: 0.25em;
-    }
-    .table-body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.25em;
+        gap: 0.5em;        
     }
     .table-row {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        margin-bottom: 0.5em;
         align-items: center;
-        gap: 1em;
         width: 70em;
         height: 3em;
         background-color: rgb(219, 151, 143);
@@ -85,20 +82,17 @@ import uuID from "vue-uuid"
         color:rgb(255, 255, 255);
     }
     .table-label{
-        width: 70em;
         font-size: 1em;
         color:black;
     }
     h1{
-        margin-top: 1em;
         color: salmon;
     }
     .btn-position{
         display: flex;
         flex-direction: row;
-        gap: 1em;
-        margin-right: 1em;
-        align-items: center;
+        justify-content: center;
+        gap: 0.5em;
     }
     .btn-edit{
         width: 4em;
