@@ -43,12 +43,13 @@ import uuID from "vue-uuid"
 </template>
 
 <style scoped>
-.back-color{
-    background-color: #333;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding-top: 0.5em;
-}
+    .back-color{
+        background-color: #333;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
     .table {
         display: flex;
         flex-direction: column;
@@ -64,17 +65,18 @@ import uuID from "vue-uuid"
         width: 70em;
         height: 4em;
         margin-bottom: 0.25em;
-        gap: 0.5em;        
+        column-gap: 0.5em;       
     }
     .table-row {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        margin-bottom: 0.5em;
         align-items: center;
-        width: 70em;
-        height: 3em;
         background-color: rgb(219, 151, 143);
         border-radius: 0.5em;
+        width: 70em;
+        height: 3em;
+        margin-bottom: 0.25em;
+        column-gap: 0.5em; 
     }
     .label{
         font-size: 1.1em;
