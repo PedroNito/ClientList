@@ -56,7 +56,7 @@ import uuID from "vue-uuid"
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 6em;
+        gap: 5.5em;
         background-color: rgb(227, 89, 74);
         border-radius: 0.5em;
         width: 70em;
@@ -66,6 +66,7 @@ import uuID from "vue-uuid"
     .table-body {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 0.25em;
     }
     .table-row {
@@ -74,7 +75,7 @@ import uuID from "vue-uuid"
         align-items: center;
         gap: 1em;
         width: 70em;
-        height: 2em;
+        height: 3em;
         background-color: rgb(219, 151, 143);
         border-radius: 0.5em;
     }
@@ -97,10 +98,11 @@ import uuID from "vue-uuid"
         flex-direction: row;
         gap: 1em;
         margin-right: 1em;
+        align-items: center;
     }
     .btn-edit{
         width: 4em;
-        height: 1.5em;
+        height: 2em;
         border-radius: 0.5em;
         border-color: rgb(79, 79, 79);
         color: rgb(63, 56, 56);
@@ -109,7 +111,7 @@ import uuID from "vue-uuid"
     }
     .btn-del{
         width: 5em;
-        height: 1.5em;
+        height: 2em;
         border-radius: 0.5em;
         border-color: rgb(79, 79, 79);
         color: rgb(50, 42, 42);
