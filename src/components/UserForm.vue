@@ -66,7 +66,7 @@ import { mapActions } from "pinia"
         align-items: center;
         padding: 1em;
         background-color: salmon;
-        width: 15em;
+        width: 20em;
         border-radius: 0.5em;
     }
     .title {
