@@ -1,9 +1,36 @@
 <script>
 import { mapState } from "pinia";
 import { usersStore } from "../store/user.js";
-import uuID from "vue-uuid"
 
     export default {
+        data(){
+            return {
+                name: '',
+                email: '',
+                contact: '',
+                password: '',
+            }
+        },
+        methods: {
+            EditHandler() {
+                const data = {
+                    name: this.name,
+                    email: this.email,
+                    contact: this.contact,
+                    password: this.password,
+                }
+                this.EditUser(data)
+            },
+            DeleteHandler() {
+                const data = {
+                    name: this.name,
+                    email: this.email,
+                    contact: this.contact,
+                    password: this.password,
+                }
+                this.DeleteUser(data)
+            },
+        },
         computed: {
             ...mapState(usersStore, ['UserList'])
         },
@@ -15,7 +42,7 @@ import uuID from "vue-uuid"
         <h1>Client List</h1>
         <div class="table">
             <div class="table-head">
-                <label for="ID" class="grid-item label">ID</label>
+                <label for="ID" class="label">ID</label>
                 <label for="img" class="label">PIC</label>
                 <label for="name" class="label">NAME</label>
                 <label for="email" class="label">EMAIL</label>
@@ -33,8 +60,8 @@ import uuID from "vue-uuid"
                     <label for="password" class="table-label">{{ user.password }}</label>
 
                     <div class="btn-position">
-                        <button class="btn-edit">Edit</button>
-                        <button class="btn-del">Delete</button>
+                        <button class="btn-edit" @click.prevent="EditHandler">Edit</button>
+                        <button class="btn-del" @click.prevent="DeleteHandler">Delete</button>
                     </div>
                 </div>
             </div>

@@ -13,5 +13,11 @@ export const usersStore = defineStore ( "users", {
         AddUser(user){
             this.UserList.push(user)
         },
+        EditUser(user){
+            this.getUser(user)
+        },
+        DeleteUser(){
+            return this.UserList = []
+        }
     },
 })
