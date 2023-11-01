@@ -4,6 +4,7 @@ import { mapActions } from "pinia"
     export default {
         data(){
             return {
+            id: '',
             name: '',
             email: '',
             contact: '',
@@ -11,8 +12,9 @@ import { mapActions } from "pinia"
             }
         },
         methods: {
-            clickHandler() {
+            submitHandler() {
                 const data = {
+                    id: this.id,
                     name: this.name,
                     email: this.email,
                     contact: this.contact,
@@ -43,7 +45,7 @@ import { mapActions } from "pinia"
                     <label for="password" class="label">Password</label>
                     <input type="text" name="password" id="password" class="input-text" v-model="password" placeholder="Insert your password">
 
-                    <button class="btn-submit" type="submit" @click.prevent="clickHandler">Submit</button>
+                    <button class="btn-submit" type="submit" @click.prevent="submitHandler">Submit</button>
             </div>
         </form>
     </div>

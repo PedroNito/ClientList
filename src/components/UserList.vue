@@ -14,12 +14,9 @@ import { usersStore } from "../store/user.js";
         methods: {
             EditHandler() {
                 const data = {
-                    name: this.name,
-                    email: this.email,
-                    contact: this.contact,
-                    password: this.password,
+                   
                 }
-                this.EditUser(data)
+                
             },
             DeleteHandler() {
                 const data = {
@@ -52,7 +49,7 @@ import { usersStore } from "../store/user.js";
             </div>
             <div class="table-body">
                 <div class="table-row" v-for="user in UserList" :key="user.id">
-                    <label for="ID" class="table-label">{{ uuID }}</label>
+                    <label for="ID" class="table-label">{{ user.id }}</label>
                     <img src="" alt="">
                     <label for="name" class="table-label">{{ user.name }}</label>
                     <label for="email" class="table-label">{{ user.email }}</label>
