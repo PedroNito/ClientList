@@ -13,19 +13,15 @@ import { usersStore } from "../store/user.js";
         },
         methods: {
             EditHandler() {
-                const data = {
-                   
-                }
-                
-            },
-            DeleteHandler() {
-                const data = {
-                    name: this.name,
+                return{
+                    name: this.editUser.name,
                     email: this.email,
                     contact: this.contact,
                     password: this.password,
                 }
-                this.DeleteUser(data)
+            },
+            DeleteHandler() {
+
             },
         },
         computed: {

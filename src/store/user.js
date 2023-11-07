@@ -13,11 +13,9 @@ export const usersStore = defineStore ( "users", {
     },
     actions: {
         AddUser(user){
-            console.log(user)
             if(user.id){
                 //edit mode
                 const users = this.UserList.filter( u => u.id !== user.id)
-                console.log(users)
                 return
             }
 
